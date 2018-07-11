@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Cart Details";
+    int count = 1;
 }
 
 <h2>Cart Details</h2>
@@ -12,7 +13,6 @@
 }
 else
 {
-
     <table class="table">
         <tr>
 
@@ -78,6 +78,28 @@ else
         </tr>
 
     </table>
+    <div class="paypaldiv">
+        <input type="hidden" name="cmd" value="_ext-enter">
+        <form class="paypalform" action="https://www.sandbox.paypal.com/us/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="upload" value="1" />
+            <input type="hidden" name="business" value="cecesoutlets-facilitator@outlook.com">
+
+            @foreach (var item in Model)
+        {
+            <input type="hidden" name="item_name_@count" value="@item.ProductName">
+            <input type="hidden" name="amount_@count" value="@item.Price">
+            <input type="hidden" name="quantity_@count" value="@item.Quantity">
+        count++;
+    }
+
+
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+        </form>
+    </div>
+    <br />
+    <a href="#" class="placeorder btn btn-primary pull-right">Checkout</a>
 }
 
 @section Scripts {
@@ -94,7 +116,7 @@ else
                 var url = "/cart/IncrementProduct";
 
                 $.getJSON(url, { productId: productId }, function (data) {
-                    
+
                     $("td.qty" + productId).html(data.qty);
 
                     var price = data.qty * data.price;
@@ -106,6 +128,12 @@ else
                     var grandtotal = (gt + data.price).toFixed(2);
 
                     $("td.grandtotal span").text(grandtotal);
+                }).done(function (data) {
+                    var url2 = "/cart/PaypalPartial";
+
+                    $.get(url2, {  }, function (data) {
+                        $("div.payapldiv").html(data);
+                    });
                 });
             });
             ////////////////////////////////////////////////////////
@@ -127,20 +155,25 @@ else
                             location.reload();
                         });
                     }
-                    else
-                    { 
-                    $("td.qty" + productId).html(data.qty);
+                    else {
+                        $("td.qty" + productId).html(data.qty);
 
-                    var price = data.qty * data.price;
-                    var priceHtml = "$" + price.toFixed(2);
+                        var price = data.qty * data.price;
+                        var priceHtml = "$" + price.toFixed(2);
 
-                    $("td.total" + productId).html(priceHtml);
+                        $("td.total" + productId).html(priceHtml);
 
-                    var gt = parseFloat($("td.grandtotal span").text())
-                    var grandtotal = (gt - data.price).toFixed(2);
+                        var gt = parseFloat($("td.grandtotal span").text())
+                        var grandtotal = (gt - data.price).toFixed(2);
 
-                    $("td.grandtotal span").text(grandtotal);
+                        $("td.grandtotal span").text(grandtotal);
                     }
+                }).done(function () {
+                    var url2 = "/cart/PaypalPartial";
+
+                    $.get(url2, {}, function (data) {
+                        $("div.payapldiv").html(data);
+                    });
                 });
             });
             ////////////////////////////////////////////////////////
@@ -157,6 +190,25 @@ else
 
                 $.get(url, { productId: productId }, function (data) {
                     location.reload();
+                });
+            });
+            ////////////////////////////////////////////////////////
+
+            /*
+             * Place Order
+             */
+            $("a.placeorder").click(function (e) {
+                e.preventDefault();
+
+                var $this = $(this)
+                var url = "/cart/PlaceOrder";
+                $(".ajaxbg").show();
+
+                $.post(url, { }, function (data) {
+                    $(".ajaxbg span").text("Thank you. You will now be redirected to paypal.");
+                    setTimeout(function () {
+                        $('form input[name="submit"]').click();
+                    }, 2000);
                 });
             });
             ////////////////////////////////////////////////////////
