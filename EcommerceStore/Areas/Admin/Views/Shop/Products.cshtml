@@ -24,19 +24,16 @@
 </select>
 <br /><br />
 
-<p>
+<div style="margin-bottom:20px;">
     @Html.ActionLink("Add New Product", "AddProduct")
-</p>
+</div>
 <table class="table">
     <tr>
         <th>
-
+            Image
         </th>
         <th>
             Name
-        </th>
-        <th>
-            Description
         </th>
         <th>
             Price
@@ -48,13 +45,10 @@
     {
         <tr>
             <td>
-                <img src="/Images/Uploads/Products/@product.Id/Thumbs/@product.ImageName" />
+                <img width="50px" src="/Images/Uploads/Products/@product.Id/Thumbs/@product.ImageName" />
             </td>
             <td>
                 <a href="/admin/shop/EditProduct/@product.Id">@product.Name</a>
-            </td>
-            <td>
-                @product.Description
             </td>
             <td>
                 $@product.Price

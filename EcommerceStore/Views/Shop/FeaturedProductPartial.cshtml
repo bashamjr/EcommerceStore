@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EcommerceStore.Models.ViewModels.Pages.ProductVM>
+
+
+    <h5 class="text-left featuredtitle">@ViewBag.CategoryName Products</h5>
+
+
+@if (!Model.Any())
+{
+    <h4 class="text-left">There are no products</h4>
+}
+else
+{
+    <div>
+        @foreach (var item in Model)
+         {
+            <div class="col-sm-12 col-md-3 product-container">
+                <div>
+                    <a href="/shop/product-details/@item.Slug">
+                        <img src="/Images/Uploads/Products/@item.Id/Thumbs/@item.ImageName" />
+                    </a>
+                </div>
+                <div class="product-content">
+                    <div>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </div>
+                    <div>
+                        <span>$@Html.DisplayFor(modelItem => item.Price)</span>
+                    </div>
+                    <div class="detailsbtn btn btn-primary">
+                        <a href="/shop/product-details/@item.Slug">Details</a>
+                    </div>
+                </div>
+            </div>
+         }
+    </div>
+}

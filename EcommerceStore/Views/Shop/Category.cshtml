@@ -4,46 +4,90 @@
     ViewBag.Title = ViewBag.CategoryName;
 }
 
-<h2>@ViewBag.CategoryName</h2>
+@if (ViewBag.Title == "Necklaces")
+{
 
-<table class="table">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Description
-        </th>
-        <th>
-            Price
-        </th>
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
 
-        <th>
-           Image
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            $@Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            <a href="/shop/product-details/@item.Slug">
-                <img src="/Images/Uploads/Products/@item.Id/Thumbs/@item.ImageName" />
-            </a>
-        </td>
-        <td>
-            <a href="/shop/product-details/@item.Slug">Details</a>
-        </td>
-    </tr>
 }
+else if (ViewBag.Title == "Bracelets")
+{
 
-</table>
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
+
+}
+else if (ViewBag.Title == "Earrings")
+{
+
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
+
+}
+else if (ViewBag.Title == "Watches")
+{
+
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
+
+}
+else if (ViewBag.Title == "Brooches")
+{
+
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
+
+}
+else if (ViewBag.Title == "Rings")
+{
+
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
+
+}
+else
+{
+    <div class="col-xs-12 col-md-12">
+        <a href="/shop/category/featured"><img style="width:100%;" src="~/Content/img/slide1.png" /></a>
+    </div>
+}
+<div class="col-xs-12 col-md-12">
+    <h5 class="text-left featuredtitle">@ViewBag.CategoryName</h5>
+</div>
+@if (!Model.Any())
+{
+    <h3 class="text-center">There are no products</h3>
+}
+else
+{
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-12 col-md-3 product-container">
+                <div>
+                    <a href="/shop/product-details/@item.Slug">
+                        <img src="/Images/Uploads/Products/@item.Id/Thumbs/@item.ImageName" />
+                    </a>
+                </div>
+                <div class="product-content">
+                    <div>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </div>
+                    <div>
+                        <span>$@Html.DisplayFor(modelItem => item.Price)</span>
+                    </div>
+                    <div class="detailsbtn btn btn-primary">
+                        <a href="/shop/product-details/@item.Slug">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

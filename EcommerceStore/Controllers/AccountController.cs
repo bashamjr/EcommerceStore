@@ -135,7 +135,7 @@ namespace EcommerceStore.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return Redirect("~/account/login");
+            return Redirect("~/");
         }
 
         [Authorize]

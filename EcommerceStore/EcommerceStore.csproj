@@ -204,6 +204,12 @@
     <Content Include="Content\fancybox\fancybox_sprite%402x.png" />
     <Content Include="Content\fancybox\fancybox_sprite.png" />
     <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\broochesAd.png" />
+    <Content Include="Content\img\jewelrylogo.png" />
+    <Content Include="Content\img\necklaceAd.png" />
+    <Content Include="Content\img\ringsAd.png" />
+    <Content Include="Content\img\searchicon25wh.png" />
+    <Content Include="Content\img\slide1.png" />
     <Content Include="Content\jquery.fancybox-buttons.css" />
     <Content Include="Content\jquery.fancybox-thumbs.css" />
     <Content Include="Content\jquery.fancybox.css" />
@@ -927,6 +933,7 @@
     <Content Include="Views\Account\UserProfile.cshtml" />
     <Content Include="Views\Cart\PaypalPartial.cshtml" />
     <Content Include="Views\Account\Orders.cshtml" />
+    <Content Include="Views\Shop\FeaturedProductPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fileman\aspnet_client\system_web\2_0_50727\" />

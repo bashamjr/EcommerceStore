@@ -1,5 +1,206 @@
-﻿table.sorting tr:not(.home) {
-    cursor:pointer;
+﻿body {
+    background: #efefef;
+    padding: 0;
+    color: #808080;
+    
+}
+.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar-toggle {
+    background-color: #2c2c2c;
+}
+.navbar-collapse.collapse {
+    padding: 0px;
+}
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+.navbar-brand {
+    font-size: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navbar-nav {
+    font-size: 12px;
+}
+
+    .pagesmenu {
+        text-align: right;
+    }
+
+.pagesmenu li {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.pagesmenu li a {
+    color: #808080 !important;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.pagesmenu li a:hover {
+    color: #2c2c2c !important;
+}
+
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.welcomemsg {
+    font-size: 12px;
+}
+
+.welcomemsg a {
+    color: #2c2c2c;
+    text-decoration: underline;
+}
+
+.catmenu-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.catmenu {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #f4f4f4;
+    border: 1px solid #808080;
+    text-align: left;
+    width: 100%;
+}
+
+.catmenu li {
+    display: inline-block;
+}
+
+.catmenu li a {
+    display: block;
+    padding: 10px;
+    color: #808080;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px;
+}
+
+.catmenu li a:hover {
+    text-decoration: none;
+    color: #2c2c2c;
+}
+
+.catmenu form {
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.catmenu form input {
+    height: 30px;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dadada;
+}
+
+.catmenu form .searchimg {
+    display: inline-block;
+    background: #2c2c2c;
+    padding: 5px;
+}
+
+.searchimg img {
+    width: 75%;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        float: left;
+    }
+
+    .catmenu li {
+        display: block;
+    }
+
+    .catmenu form {
+        margin-bottom: 10px;
+    }
+
+    .promomsg {
+        display: none;
+    }
+}
+
+p {
+    padding: 15px;
+}
+
+.featureproducts {
+    margin-top: 15px;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.featuredtitle {
+    background: #fff;
+    padding: 10px 10px 10px 22px;
+    text-transform: uppercase;
+}
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+.product-container {
+    background: #ffffff;
+    width: 200px;
+    margin-right: 55px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.product-gallery h4 {
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.product-container span {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.product-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.detailsbtn {
+    background-color: #717171 !important;
+    border: none !important;
+}
+
+.detailsbtn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient( #a3a3a3, #717171);
+}
+
+table {
+    background: #fff;
+    border: 1px solid #808080;
+}
+table td, th {
+    background: #fff;
+    border: 1px solid #ccc !important;
+}
+table.sorting tr:not(.home) {
+    cursor: pointer;
 }
 
 .ui-state-highlight {
@@ -7,7 +208,7 @@
 }
 
 div.new-cat {
-    margin-top: 30px;
+    margin-top: 10px;
     position: relative;
 }
 
@@ -16,11 +217,11 @@ span.ajax-text {
 }
 
 table.sorting.categories td {
- padding: 20px!important;
+    padding: 20px !important;
 }
 
 .ajaxdivtd {
-   position: absolute;
+    position: absolute;
 }
 
 span.loader {
@@ -35,17 +236,25 @@ span.ajaxmsg {
     position: absolute;
     bottom: 0;
 }
+
 .ajaxcart {
-    position:relative;
-    top: 5px;
+    font-size: 12px;
 }
+
+.ajaxcart a {
+    color: #2c2c2c;
+    text-decoration: underline;
+}
+
 .ib {
-    display: inline-block!important;
+    display: inline-block !important;
 }
 
 ul.adminarea {
-    position: relative;
-    top: 15px;
+    display: inline-block;
+    list-style-type: none;
+    font-size: 12px;
+    text-transform: uppercase;
 }
 
 .ajaxbg {
@@ -68,6 +277,39 @@ form.paypalform {
     left: -2000px;
 }
 
-.row {
-    position: relative;
+.col-md-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+footer div.col-md-3 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    background: #2e2e2e;
+    color: grey;
+    font-size: 12px;
+}
+
+footer div.footerlinks {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer div.copyrighttext {
+    margin-top: 20px;
+    padding-top: 20px;
+    max-width: 1020px;
+    margin: 0 auto;
 }

@@ -3,14 +3,21 @@
 @{
     ViewBag.Title = "Page Details";
 }
-
-<h2>Page Details</h2>
-
+<style>
+    p {
+        padding-left:0px;
+        padding-top: 0px;
+    }
+</style>
+<h3>Page Details</h3>
 <div>
-    <hr />
+    @Html.ActionLink("Edit", "EditPage", new { id = Model.Id }) |
+    @Html.ActionLink("Back to Pages", "Index")
+</div>
+<div class="col-md-12">
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.Title):
         </dt>
 
         <dd>
@@ -18,7 +25,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Slug)
+            @Html.DisplayNameFor(model => model.Slug):
         </dt>
 
         <dd>
@@ -26,7 +33,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Body)
+            @Html.DisplayNameFor(model => model.Body):
         </dt>
 
         <dd>
@@ -34,7 +41,4 @@
         </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "EditPage", new { id = Model.Id }) |
-    @Html.ActionLink("Back to Pages", "Index")
-</p>
+

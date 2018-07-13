@@ -5,7 +5,9 @@
 }
 
 <h2>Add Page</h2>
-
+<div>
+    @Html.ActionLink("Back to Pages", "Index")
+</div>
 @if (TempData["SM"] != null)
 {
     <div class="alert alert-success">
@@ -62,9 +64,7 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to Pages", "Index")
-</div>
+
 
 @section Scripts {
 

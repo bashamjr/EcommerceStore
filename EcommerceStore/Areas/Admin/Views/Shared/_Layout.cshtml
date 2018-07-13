@@ -8,36 +8,63 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-topcancel">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/admin/dashboard" class="navbar-brand">Dashboard</a>
+                <div class="row" style="border-bottom: 1px solid #dadada; margin-bottom: 10px;padding-left: 15px; padding-right:15px;">
+                    <div class="col-sm-12 col-md-6" style="margin-top:20px; padding-left: 0; padding-right:0;">
+                        @if (Request.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))
+                        {
+                            <span class="welcomemsg">WELCOME BACK @Html.Action("UserNavPartial", "Account", new { area = "" })! <a href="/account/logout"> Logout</a></span>
+                        }
+                        else
+                        {
+                            <span class="welcomemsg">WELCOME VISTOR YOU CAN <a href="/account/login">LOGIN</a> OR <a href="/account/create-account">CREATE AN ACCOUNT</a></span>
+                        }
+                    </div>
+                    <div class="col-sm-12 col-md-3 pull-right" style="margin-top:20px; text-align: right; padding-left: 0; padding-right:0;">
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <ul class="adminarea">
+                                <li>@Html.ActionLink("Admin Area", "Index", "Dashboard", new { area = "Admin" }, null)</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            if (ViewBag.Title != "Cart Details")
+                            {
+                                <ul class="">
+                                    @Html.Action("CartPartial", "Cart")
+                                </ul>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/admin/dashboard" class="navbar-brand" style="padding-right: 10px;">Dashboard</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/admin/pages">Pages</a></li>
+                        <li><a href="/admin/pages/EditSidebar">Sidebar</a></li>
+                        <li><a href="/admin/shop/Categories">Categories</a></li>
+                        <li><a href="/admin/shop/Products">Products</a></li>
+                        <li><a href="/admin/shop/Orders">Orders</a></li>
+                    </ul>
+                    <ul class="navbar-right" style="list-style-type: none;">
+                        <li><a href="/" class="navbar-brand">Back to Store</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/admin/pages">Pages</a></li>
-                    <li><a href="/admin/pages/EditSidebar">Sidebar</a></li>
-                    <li><a href="/admin/shop/Categories">Categories</a></li>
-                    <li><a href="/admin/shop/Products">Products</a></li>
-                    <li><a href="/admin/shop/Orders">Orders</a></li>
-                </ul>
-                <ul class="navbar-right">
-                    <li><a href="/" class="navbar-brand" target="_blank">EcommerceStore</a></li>
-                </ul>
-            </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-    </div>
 
-    @Scripts.Render("~/bundles/scripts")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/scripts")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

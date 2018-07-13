@@ -284,7 +284,7 @@ namespace EcommerceStore.Areas.Admin.Controllers
                 ViewBag.SelectedCat = catId.ToString();
             }
             // Set pagination
-            var onePageOfProducts = listOfProductVM.ToPagedList(pageNumber, 3);
+            var onePageOfProducts = listOfProductVM.ToPagedList(pageNumber, 4);
             ViewBag.OnePageOfProducts = onePageOfProducts;
 
             // Return view with list

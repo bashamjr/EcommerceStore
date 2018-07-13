@@ -4,16 +4,16 @@
     ViewBag.Title = "Categories";
 }
 
-<h2>Categories</h2>
+<h3>Categories</h3>
 <div class="new-cat">
-    <input type="text" id="newcatname" />
-    <p>
-        <a href="#" id="newcata">Add a new category</a>
+    <label>Category Name:</label>
+    <input style="height:32px;" type="text" id="newcatname" />
+    <div style="margin-top:20px; margin-bottom: 20px; display:inline-block; padding-left: 5px;">
+        <a href="#" id="newcata" class="detailsbtn btn btn-primary">Add</a>
         <span class="ajax-text">
             <img src="~/Content/img/ajax-loader.gif" />
         </span>
-    </p>
-
+    </div>
 </div>
 
 @if (!Model.Any())
@@ -22,6 +22,8 @@
 }
 else
 {
+    <h4>Double click on category name to edit the name.</h4>
+    <h5>Drag and drop to rearrange categories.</h5>
     <table class="table sorting categories" id="pages">
         <tr class="home">
             <th>
@@ -116,9 +118,9 @@ else
 
 
             ////////////////////////////////////////////////////////
-             /*
-             * Sort cat table
-             */
+            /*
+            * Sort cat table
+            */
             $("table#pages tbody").sortable({
                 items: "tr:not(.home)",
                 placeholder: "ui-state-highlight",
@@ -189,8 +191,8 @@ else
                             ajaxdiv.html("");
                         })
                     }, 2000);
-                    }).done(function () {
-                        $this.attr("readonly", true);
+                }).done(function () {
+                    $this.attr("readonly", true);
                 });
 
 

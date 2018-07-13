@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit Sidebar";
 }
 
-<h2>Edit Sidebar</h2>
+<h3>Edit Sidebar</h3>
 @if (TempData["SM"] != null)
 {
     <div class="alert alert-success">
@@ -21,15 +21,14 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="HasSidebar">Sidebar</label>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.TextAreaFor(model => model.Body, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-12">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
