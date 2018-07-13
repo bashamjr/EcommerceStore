@@ -210,6 +210,7 @@
     <Content Include="Content\img\ringsAd.png" />
     <Content Include="Content\img\searchicon25wh.png" />
     <Content Include="Content\img\slide1.png" />
+    <Content Include="Content\img\Spinner-1s-150px.gif" />
     <Content Include="Content\jquery.fancybox-buttons.css" />
     <Content Include="Content\jquery.fancybox-thumbs.css" />
     <Content Include="Content\jquery.fancybox.css" />

@@ -9,7 +9,7 @@
 <p style="padding-left: 0px;">
     @Html.ActionLink("Add New Page", "AddPage")
 </p>
-
+<h4>Drag and drop row to reorder pages.</h4>
 @if (!Model.Any())
 {
     <h1 class="text-center">There are no pages.</h1>
@@ -71,7 +71,7 @@ else
             ////////////////////////////////////////////////////////
 
             /*
-             * Confirm Page Deletion
+             * Reorder Pages
              */
             $("table#pages tbody").sortable({
                 items: "tr:not(.home)",

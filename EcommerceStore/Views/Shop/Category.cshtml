@@ -77,13 +77,13 @@ else
                     </a>
                 </div>
                 <div class="product-content">
-                    <div>
+                    <div class="product-title">
                         @Html.DisplayFor(modelItem => item.Name)
                     </div>
-                    <div>
+                    <div class="product-box-price">
                         <span>$@Html.DisplayFor(modelItem => item.Price)</span>
                     </div>
-                    <div class="detailsbtn btn btn-primary">
+                    <div class="product-btn detailsbtn btn btn-primary">
                         <a href="/shop/product-details/@item.Slug">Details</a>
                     </div>
                 </div>

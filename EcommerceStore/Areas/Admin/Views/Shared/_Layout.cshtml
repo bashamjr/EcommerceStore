@@ -24,7 +24,7 @@
                         @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                         {
                             <ul class="adminarea">
-                                <li>@Html.ActionLink("Admin Area", "Index", "Dashboard", new { area = "Admin" }, null)</li>
+                                <li>@Html.ActionLink("Admin Area", "Orders", "Shop", new { area = "Admin" }, null)</li>
                             </ul>
                         }
                         else
@@ -44,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/admin/dashboard" class="navbar-brand" style="padding-right: 10px;">Dashboard</a>
+                    <a href="/admin/shop/orders" class="navbar-brand" style="padding-right: 10px;">Dashboard</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

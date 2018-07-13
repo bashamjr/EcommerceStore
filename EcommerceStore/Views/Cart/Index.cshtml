@@ -205,10 +205,10 @@ else
                 $(".ajaxbg").show();
 
                 $.post(url, { }, function (data) {
-                    $(".ajaxbg span").text("Thank you. You will now be redirected to paypal.");
+                    $(".ajaxbg span").text("Thank you for your purchase! You will now be redirected to paypal to checkout.");
                     setTimeout(function () {
                         $('form input[name="submit"]').click();
-                    }, 2000);
+                    }, 3000);
                 });
             });
             ////////////////////////////////////////////////////////

@@ -234,12 +234,12 @@ namespace EcommerceStore.Controllers
                 }
             }
             // Email admin
-            var client = new SmtpClient("smtp.mailtrap.io", 2525)
-            {
-                Credentials = new NetworkCredential("057abab885c994", "373c8704084412"),
-                EnableSsl = true
-            };
-            client.Send("admin@example.com", "admin@example.com", "New Order", "You have a new order! Order number " + orderId);
+           // var client = new SmtpClient("smtp.mailtrap.io", 2525)
+         //   {
+           //     Credentials = new NetworkCredential("057abab885c994", "373c8704084412"),
+            //    EnableSsl = true
+          //  };
+            // client.Send("admin@example.com", "admin@example.com", "New Order", "You have a new order! Order number " + orderId);
 
             // Reset Session
             Session["cart"] = null;

@@ -254,7 +254,7 @@ namespace EcommerceStore.Areas.Admin.Controllers
                 file.SaveAs(path);
                 // Create and save thumb
                 WebImage img = new WebImage(file.InputStream);
-                img.Resize(200, 200);
+                img.Resize(200, 200).Crop(1, 1).Write();
                 img.Save(path2);
             }
 
@@ -476,7 +476,7 @@ namespace EcommerceStore.Areas.Admin.Controllers
                     file.SaveAs(path);
 
                     WebImage img = new WebImage(file.InputStream);
-                    img.Resize(200, 200);
+                    img.Resize(200, 200).Crop(1, 1).Write();
                     img.Save(path2);
                 }
             }

@@ -9,8 +9,10 @@
         <img width="500px" src="/Images/Uploads/Products/@Model.Id/@Model.ImageName" />
     </div>
     <div class="col-xs-12 col-md-6">
-        <h4 style="margin-top:0px;">@Model.Name</h4>
-        <p style="padding-left: 0px;">@Html.DisplayFor(model => model.Description)</p>
+        <h4 style="margin-top:0px; color:#2c2c2c;">@Model.Name</h4>
+        <div class="product-description">
+            @Html.Raw(Model.Description)
+        </div>
         <span class="product-price">Retail Price: $@Html.DisplayFor(model => model.Price)</span>
 
         @if (Request.IsAuthenticated)

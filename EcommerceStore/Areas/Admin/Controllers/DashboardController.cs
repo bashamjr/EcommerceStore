@@ -13,6 +13,7 @@ namespace EcommerceStore.Areas.Admin.Controllers
         public ActionResult Index()
         {
             return View();
+            
         }
     }
 }
