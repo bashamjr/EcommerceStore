@@ -10,6 +10,8 @@ namespace EcommerceStore.Controllers
 {
     public class PagesController : Controller
     {
+
+
         // GET: Index/{page}
         public ActionResult Index(string page="")
         {
