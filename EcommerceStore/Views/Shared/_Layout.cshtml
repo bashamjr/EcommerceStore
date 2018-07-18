@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row" style="padding-left:15px; padding-right:15px; margin:0;">
             <div class="row" style="border-bottom: 1px solid #dadada; margin-bottom: 10px;">
-                <div class="col-sm-12 col-md-6" style="margin-top:20px; padding-left: 0; padding-right:0;">
+                <div class="col-sm-12 col-md-6 welcomemsg-container" style="margin-top:20px; padding-left: 0; padding-right:0;">
                     @if (Request.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))
                     {
                         <span class="welcomemsg">WELCOME BACK @Html.Action("UserNavPartial", "Account", new { area = "" })! <a href="/account/logout"> Logout</a></span>
@@ -21,12 +21,12 @@
                         <span class="welcomemsg">WELCOME VISTOR YOU CAN <a href="/account/login">LOGIN</a> OR <a href="/account/create-account">CREATE AN ACCOUNT</a></span>
                     }
                 </div>
-                <div class="col-sm-12 col-md-3 pull-right" style="margin-top:20px; padding-left: 0; padding-right:0;">
+                <div class="col-sm-12 col-md-3 pull-right pagesmenu-container" style="margin-top:20px; padding-left: 0; padding-right:0;">
                     <ul class="pagesmenu">
                         @Html.Action("PagesMenuPartial", "Pages")
                     </ul>
                 </div>
-                <div class="col-sm-12 col-md-3 pull-right" style="margin-top:20px; text-align: right; padding-left: 0; padding-right:0;">
+                <div class="col-sm-12 col-md-3 pull-right ajaxcart-container" style="margin-top:20px; text-align: right; padding-left: 0; padding-right:0;">
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <ul class="adminarea">
@@ -46,15 +46,15 @@
             </div>
             <div class="row">
                 <div class="logo col-sm-12 col-md-6" style="padding-left: 0; padding-right:0;">
-                    <a href="/"><img src="~/Content/img/jewelrylogo.png" /></a>
+                    <a href="/"><img src="~/Content/img/jewelrylogo-trans.png" /></a>
                 </div>
-                <div class="col-sm-12 col-md-4" style="border-right: #808080 1px solid; text-align: right; font-size: 16px; margin-top:20px;">
+                <div class="col-sm-12 col-md-4 freeship" style="border-right: #808080 1px solid; text-align: right; font-size: 16px; margin-top:20px;">
                     <span style="font-weight:bold;">
                         FREE SHIPPING
                     </span><br />
                     <span style="font-size: 14px;">ON ORDERS OVER $99</span>
                 </div>
-                <div class="col-sm-12 col-md-2" style="font-size: 16px; margin-top:20px;text-align: right;">
+                <div class="col-sm-12 col-md-2 contactus" style="font-size: 16px; margin-top:20px;text-align: right;">
                     1-800-877-877<br />
                     <span style="font-size: 12px;">MON - SAT: 9AM - 5PM</span>
                 </div>

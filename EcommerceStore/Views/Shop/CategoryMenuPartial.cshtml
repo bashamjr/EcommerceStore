@@ -1,13 +1,24 @@
 ﻿@model IEnumerable<EcommerceStore.Models.ViewModels.Shop.CategoryVM>
 
-    
-        @foreach (var item in Model)
+@{
+    var tempPageTitle = @ViewBag.Title;
+}
+
+
+    @foreach (var item in Model)
+    {
+        if (tempPageTitle == item.Name)
         {
-        <li><a href="/shop/category/@item.Slug.ToLower()">@item.Name</a></li>
+            <li class="active"><a href="/shop/category/@item.Slug.ToLower()">@item.Name</a></li>
         }
-        <form class="search" action="/shop/search" method="post">
-            <input name="searchterm" type="text" />
-            <div class="searchimg"><img style="display:inline-block" src="~/Content/img/searchicon25wh.png" /></div>
-        </form>
+        else
+        {
+            <li><a href="/shop/category/@item.Slug.ToLower()">@item.Name</a></li>
+        }
+    }
+    <form class="search" action="/shop/search" method="post">
+        <input name="searchterm" type="text" />
+        <div class="searchimg"><img style="display:inline-block" src="~/Content/img/searchicon25wh.png" /></div>
+    </form>
 
 

@@ -1,11 +1,11 @@
 ﻿@model EcommerceStore.Models.ViewModels.Pages.ProductVM
 
 @{
-    ViewBag.Title = "Model.Name";
+    ViewBag.Title = Model.Name;
 }
 
 <div class="row" style="margin-top: 15px;">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-6 featureimg">
         <img width="500px" src="/Images/Uploads/Products/@Model.Id/@Model.ImageName" />
     </div>
     <div class="col-xs-12 col-md-6">
@@ -39,7 +39,7 @@
     <div class="col-xs-12 fancyboxdiv">
         @foreach (var image in Model.GalleryImages)
         {
-            <div style="display:inline-block; padding-right:15px;">
+            <div class="fancybox-container" style="display:inline-block; padding-right:15px;">
                 <a class="fancybox" rel="gallery1" href="/Images/Uploads/Products/@Model.Id/Gallery/@image">
                     <img src="/Images/Uploads/Products/@Model.Id/Gallery/Thumbs/@image" />
                 </a>

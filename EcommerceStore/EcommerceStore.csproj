@@ -205,6 +205,7 @@
     <Content Include="Content\fancybox\fancybox_sprite.png" />
     <Content Include="Content\img\ajax-loader.gif" />
     <Content Include="Content\img\broochesAd.png" />
+    <Content Include="Content\img\jewelrylogo-trans.png" />
     <Content Include="Content\img\jewelrylogo.png" />
     <Content Include="Content\img\necklaceAd.png" />
     <Content Include="Content\img\ringsAd.png" />

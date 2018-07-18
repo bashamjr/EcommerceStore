@@ -1,5 +1,5 @@
 ﻿body {
-    background: #efefef;
+    background: #fcfcfc;
     padding: 0;
     color: #2c2c2c;
 }
@@ -36,7 +36,8 @@
     font-size: 12px;
 }
 .pagesmenu li a:hover {
-    color: #2c2c2c !important;
+    color: #af7bb7!important;
+    text-decoration: none;
 }
 .container {
     max-width: 1020px;
@@ -50,6 +51,9 @@
     color: #2c2c2c;
     text-decoration: underline;
 }
+.welcomemsg a:hover {
+    color: #af7bb7 !important;
+}
 .catmenu-container {
     padding-left: 0px;
     padding-right: 0px;
@@ -57,7 +61,7 @@
 .catmenu {
     margin-top: 10px;
     margin-bottom: 10px;
-    background: #f4f4f4;
+    background: #fcfcfc;
     border: 1px solid #808080;
     text-align: left;
     width: 100%;
@@ -68,14 +72,18 @@
 .catmenu li a {
     display: block;
     padding: 10px;
-    color: #808080;
+    color: #2c2c2c;
     text-transform: uppercase;
     font-size: 12px;
     padding: 15px;
 }
 .catmenu li a:hover {
     text-decoration: none;
-    color: #2c2c2c;
+    color: #af7bb7;
+}
+.catmenu li a:active {
+    text-decoration: none;
+    color: #af7bb7;
 }
 .catmenu form {
     padding-top: 10px;
@@ -84,7 +92,7 @@
 .catmenu form input {
     height: 30px;
     padding: 5px;
-    background: #efefef;
+    background: #fff;
     border: 1px solid #dadada;
 }
 .catmenu form .searchimg {
@@ -96,21 +104,74 @@
     width: 75%;
     padding-left: 5px;
 }
+
 @media screen and (max-width: 600px) {
     .logo {
         float: left;
+        width: 50%;
+    }
+    .logo img {
+        padding-left: 20px;
     }
 
     .catmenu li {
         display: block;
     }
-
     .catmenu form {
         margin-bottom: 10px;
     }
-
-    .promomsg {
+    footer {
+        padding: 35px;
+    }
+    .body-content {
+        padding: 20px;
+    }
+    .featureimg img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-description table {
+        width: 100%;
+    }
+    .product-container {
+        margin: 20px auto!important;
+        width: 80%!important;
+    }
+    .freeship {
         display: none;
+    }
+    .contactus {
+        display: none;
+    }
+    .navbar-header {
+        position: relative;
+        right: 0px;
+        top: -55px;
+        width: 50px;
+        float: right;
+    }
+    .ajaxcart {
+        padding-right:20px;
+    }
+    .welcomemsg-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .pagesmenu-container {
+        float: left!important;
+    }
+    .pagesmenu-container ul {
+        padding-left: 20px;
+    }
+    .ajaxcart-container {
+        float: left!important;
+        text-align: left!important;
+    }
+    .ajaxcart-container ul {
+        padding-left: 20px;
+    }
+    .fancybox-container {
+        margin-bottom: 20px;
     }
 }
 p {
@@ -122,7 +183,8 @@ p {
     margin: 0 auto;
 }
 .featuredtitle {
-    background: #fff;
+    font-size: 1.5em;
+    color: #af7bb7!important;
     padding: 10px 10px 10px 22px;
     text-transform: uppercase;
 }
@@ -134,7 +196,6 @@ p {
 }
 .product-description {
     margin-bottom: 20px;
-
 }
 .product-description table, .product-description td {
     background: transparent;

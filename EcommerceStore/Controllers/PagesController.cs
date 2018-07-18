@@ -13,7 +13,7 @@ namespace EcommerceStore.Controllers
 
 
         // GET: Index/{page}
-        public ActionResult Index(string page="")
+        public ActionResult Index(string page = "")
         {
             // Get/Set page slug
             if (page == "")
