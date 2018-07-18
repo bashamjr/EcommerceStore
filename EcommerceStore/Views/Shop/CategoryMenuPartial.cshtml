@@ -16,9 +16,9 @@
             <li><a href="/shop/category/@item.Slug.ToLower()">@item.Name</a></li>
         }
     }
-    <form class="search" action="/shop/search" method="post">
-        <input name="searchterm" type="text" />
-        <div class="searchimg"><img style="display:inline-block" src="~/Content/img/searchicon25wh.png" /></div>
+    <form action="/Shop/Search" class="search" method="get">
+        <input name="searchString" type="text" />
+        <input class="btn detailsbtn btn-primary" type="submit" value="Search"/>
     </form>
 
 

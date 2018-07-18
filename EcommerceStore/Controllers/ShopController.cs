@@ -18,6 +18,29 @@ namespace EcommerceStore.Controllers
             return RedirectToAction("Index", "Pages");
         }
 
+        // Search
+        [HttpGet]
+        public ActionResult Search(string searchString) {
+
+            // Declare a list of ProductVM
+            List<ProductVM> productVMList;
+
+            if (String.IsNullOrEmpty(searchString))
+            {
+                return RedirectToAction("Index");
+            }
+
+            using (Db db = new Db())
+            {
+                // Init the list
+                productVMList = db.Products.ToArray().Where(x => x.Name.Contains(searchString)).Select(x => new ProductVM(x)).ToList();
+                
+            }
+
+            return View(productVMList);
+ 
+        }
+
         public ActionResult CategoryMenuPartial()
         {
             // Declare list of CategoryVM

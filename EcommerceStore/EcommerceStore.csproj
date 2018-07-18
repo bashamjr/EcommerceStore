@@ -936,6 +936,7 @@
     <Content Include="Views\Cart\PaypalPartial.cshtml" />
     <Content Include="Views\Account\Orders.cshtml" />
     <Content Include="Views\Shop\FeaturedProductPartial.cshtml" />
+    <Content Include="Views\Shop\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fileman\aspnet_client\system_web\2_0_50727\" />
